@@ -1,0 +1,21 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.sidenav-container {
+  height: 100vh;
+  background-color: rgba(0, 90, 83, 0.651);
+}
+
+.sidenav {
+  width: 250px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-icon {
+  margin: 0 8px;
+}
