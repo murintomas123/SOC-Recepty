@@ -1,0 +1,64 @@
+.recepty-container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.search-info {
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+  color: #444;
+}
+
+.recepty-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.recept-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+
+.recept-img {
+  height: 200px;
+  object-fit: cover; 
+  width: 100%;
+}
+
+mat-card-header {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.popis {
+  color: #555;
+  line-height: 1.4;
+}
+
+.section-title {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+mat-chip-set {
+  margin-bottom: 12px;
+}
+
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.no-results mat-icon {
+  font-size: 64px;
+  width: 64px;
+  height: 64px;
+  color: #999;
+}

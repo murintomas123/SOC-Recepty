@@ -1,0 +1,43 @@
+<div class="recepty-container">
+  <h2>Recepty</h2>
+
+  <p *ngIf="vyhladanaSurovina" class="search-info">
+    Výsledky pre surovinu: <strong>"{{ vyhladanaSurovina }}"</strong>
+  </p>
+
+  <div class="recepty-grid" *ngIf="filtrovaneRecepty.length > 0; else ziadneRecepty">
+    <mat-card class="recept-card mat-elevation-z3" *ngFor="let recept of filtrovaneRecepty">
+          <img mat-card-image [src]="recept.obrazok" [alt]="recept.nazov" class="recept-img">
+      <mat-card-header>
+        <mat-card-title>{{ recept.nazov }}</mat-card-title>
+        <mat-card-subtitle>
+          <mat-icon inline>schedule</mat-icon> {{ recept.cas }}
+        </mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p class="popis">{{ recept.popis }}</p>
+
+        <h4 class="section-title">Ingrediencie:</h4>
+        <mat-chip-set>
+          <mat-chip *ngFor="let surovina of recept.suroviny">
+            {{ surovina }}
+          </mat-chip>
+        </mat-chip-set>
+      </mat-card-content>
+
+      <mat-card-actions align="end">
+        <button mat-flat-button color="primary">Detail receptu</button>
+      </mat-card-actions>
+
+    </mat-card>
+  </div>
+
+  <ng-template #ziadneRecepty>
+    <div class="no-results">
+      <mat-icon>search_off</mat-icon>
+      <p>Nenašli sa žiadne recepty pre surovinu "{{ vyhladanaSurovina }}".</p>
+      <button mat-button color="primary" routerLink="/">Späť na vyhľadávanie</button>
+    </div>
+  </ng-template>
+</div>

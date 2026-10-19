@@ -1,0 +1,41 @@
+<div class="home-container"> 
+<div class="banner-food">
+    <div class="banner-overlay">
+      <h1>Nevieš, čo dnes uvariť?</h1>
+      <p>Zadaj ingrediencie, ktoré ti zostali v chladničke, a nájdeme ti skvelý recept!</p>
+    </div>
+</div>
+
+
+  <div class="search-section">
+    <mat-card class="search-card mat-elevation-z4">
+      <mat-card-header>
+        <mat-card-title>Čo máš doma?</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="search-box">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Zadaj suroviny (napr. vajcia, cibuľa, syr...)</mat-label>
+            <input 
+              matInput 
+              [(ngModel)]="suroviny" 
+              placeholder="napr. zemiaky, smotana"
+              (keyup.enter)="vyhladatRecepty()">
+            <mat-icon matSuffix>restaurant_menu</mat-icon>
+          </mat-form-field>
+
+          <button 
+            mat-flat-button 
+            color="primary" 
+            class="search-btn"
+            (click)="vyhladatRecepty()"
+            routerLink="/recepty">
+            <mat-icon>search</mat-icon>
+            Nájsť recepty
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
