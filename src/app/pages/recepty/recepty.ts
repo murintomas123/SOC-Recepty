@@ -35,18 +35,18 @@ export class Recepty implements OnInit {
   vsetkyRecepty: Recept[] = [
     {
       id: 1,
-      nazov: 'Kráľovská praženica',
-      popis: 'Nadýchaná praženica na masielku s cibuľkou a rozpusteným syrom.',
-      obrazok: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=600&q=80',
-      suroviny: ['vajcia', 'cibuľa', 'syr', 'maslo'],
-      cas: '10 min'
+      nazov: 'Špagety Carbonara',
+      popis: 'Klasické talianske cestoviny s krémovou omáčkou z vajec, syra a slaniny.',
+      obrazok: 'https://kuchynalidla.sk/storage/app/uploads/public/5fa/c0e/376/5fac0e37626a8863195401.jpg',
+      suroviny: ['špagety', 'vajcia', 'slanina', 'parmezán'],
+      cas: '30 min'
     },
     {
       id: 2,
-      nazov: 'Domáce palacinky',
-      popis: 'Jemné, tenké palacinky plnené džemom alebo čokoládou.',
-      obrazok: 'https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=600&q=80',
-      suroviny: ['mlieko', 'múka', 'vajcia', 'cukor'],
+      nazov: 'Kuracie prsia na grile',
+      popis: 'Šťavnaté kuracie prsia marinované v bylinkách a grilované do dokonalosti.',
+      obrazok: 'https://kuchynalidla.sk/storage/app/uploads/public/5fa/c0e/256/5fac0e256dbbe659066848.jpg',
+      suroviny: ['kuracie prsia', 'olivový olej', 'bylinky', 'soľ', 'korenie'],
       cas: '25 min'
     },
     {
