@@ -1,0 +1,25 @@
+<div class="form-container">
+  <h2>Pridať nový recept</h2>
+  
+  <div class="form-group">
+    <label>Názov receptu:</label>
+    <input type="text" [(ngModel)]="nazov" placeholder="Napr. Sviečková na smotane" />
+  </div>
+
+  <div class="form-group">
+    <label>Čas prípravy (v minútach):</label>
+    <input type="number" [(ngModel)]="casPripravy" placeholder="45" />
+  </div>
+
+  <div class="form-group">
+    <label>Ingrediencie:</label>
+    <textarea [(ngModel)]="ingrediencie" rows="4" placeholder="Zoznam surovín..."></textarea>
+  </div>
+
+  <div class="form-group">
+    <label>Postup prípravy:</label>
+    <textarea [(ngModel)]="postup" rows="6" placeholder="Krok za krokom..."></textarea>
+  </div>
+
+  <button class="btn-submit" (click)="ulozitRecept()">Vytvoriť recept</button>
+</div>

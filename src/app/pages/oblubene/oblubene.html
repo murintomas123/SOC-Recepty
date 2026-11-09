@@ -1,0 +1,33 @@
+<div class="page-container">
+  <h2>Obľúbené recepty</h2>
+
+  <div *ngIf="receptyService.getOblubeneRecepty().length === 0">
+    <p>Zatiaľ nemáte žiadne obľúbené recepty. Kliknite na srdiečko v zozname receptov!</p>
+  </div>
+
+  <div class="grid-container">
+    <div *ngFor="let item of receptyService.getOblubeneRecepty()" class="card" (click)="otvorDetail(item)">
+      <div class="card-header">
+        <h3>{{ item.nazov }}</h3>
+        <button class="heart-btn active" (click)="prepniHeart($event, item.id)">
+          ♥
+        </button>
+      </div>
+      <p class="time">⏱ {{ item.casPripravy }} min</p>
+      <p class="preview">{{ item.ingrediencie }}</p>
+    </div>
+  </div>
+
+  <div class="modal" *ngIf="otvorenyRecept" (click)="zatvorDetail()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <span class="close-btn" (click)="zatvorDetail()">&times;</span>
+      <h2>{{ otvorenyRecept.nazov }}</h2>
+      <p><strong>Čas prípravy:</strong> {{ otvorenyRecept.casPripravy }} minút</p>
+      <hr />
+      <h4>Ingrediencie:</h4>
+      <p class="text-block">{{ otvorenyRecept.ingrediencie }}</p>
+      <h4>Postup:</h4>
+      <p class="text-block">{{ otvorenyRecept.postup }}</p>
+    </div>
+  </div>
+</div>

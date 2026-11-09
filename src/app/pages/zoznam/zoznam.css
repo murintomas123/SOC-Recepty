@@ -1,0 +1,56 @@
+.zoznam-card {
+  max-width: 600px;
+  margin: 24px auto;
+  padding: 16px;
+}
+
+.pridat-box {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.input-field {
+  flex: 1;
+}
+
+.row-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 4px 0;
+}
+
+.dokoncene {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.edit-field {
+  flex: 1;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.akcie {
+  display: flex;
+  gap: 4px;
+}
+
+.prazdny-text {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.54);
+  margin: 24px 0;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 16px;
+}
+
+.btn-vycistit {
+  width: 100%;
+}

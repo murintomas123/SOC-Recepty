@@ -1,1 +1,66 @@
-<p>zoznam works!</p>
+<mat-card class="zoznam-card">
+  <mat-card-header>
+    <mat-card-title>Nákupný zoznam</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <!-- Pridanie novej položky -->
+    <div class="pridat-box">
+      <mat-form-field appearance="outline" class="input-field">
+        <mat-label>Čo treba kúpiť?</mat-label>
+        <input 
+          matInput 
+          [(ngModel)]="novaPolozkaText" 
+          (keyup.enter)="pridatPolozku()" 
+          placeholder="napr. Mlieko, Chlieb"
+        />
+      </mat-form-field>
+      <button mat-flat-button color="primary" (click)="pridatPolozku()">
+        <mat-icon>add</mat-icon> Pridať
+      </button>
+    </div>
+
+    <!-- Zoznam položiek -->
+    <mat-list *ngIf="polozky.length > 0; else prazdny">
+      <mat-list-item *ngFor="let p of polozky" class="polozka-item">
+        <div class="row-content">
+          <mat-checkbox [(ngModel)]="p.kupene" color="primary">
+            <span [class.dokoncene]="p.kupene" *ngIf="!p.isEditing" (dblclick)="upravitPolozku(p)">
+              {{ p.nazov }}
+            </span>
+          </mat-checkbox>
+
+          <!-- Input pri editácii -->
+          <mat-form-field appearance="outline" *ngIf="p.isEditing" class="edit-field">
+            <input 
+              matInput 
+              [(ngModel)]="p.nazov" 
+              (keyup.enter)="ulozitUpravu(p)" 
+              (blur)="ulozitUpravu(p)"
+              autofocus
+            />
+          </mat-form-field>
+
+          <div class="akcie">
+            <button mat-icon-button color="accent" (click)="upravitPolozku(p)" *ngIf="!p.isEditing" title="Upraviť">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="vymazatPolozku(p.id)" title="Vymazať">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </div>
+      </mat-list-item>
+    </mat-list>
+
+    <ng-template #prazdny>
+      <p class="prazdny-text">Zoznam je zatiaľ prázdny.</p>
+    </ng-template>
+  </mat-card-content>
+
+  <mat-card-actions *ngIf="polozky.length > 0">
+    <button mat-stroked-button color="warn" class="btn-vycistit" (click)="zrusitKupene()">
+      <mat-icon>clear_all</mat-icon> Vymazať nakúpené položky
+    </button>
+  </mat-card-actions>
+</mat-card>

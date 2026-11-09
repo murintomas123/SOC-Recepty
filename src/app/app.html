@@ -1,41 +1,33 @@
-<mat-sidenav-container class="sidenav-container">
-  
-  
-  <mat-sidenav #drawer mode="over" class="sidenav">
-    <mat-toolbar color="primary">Menu</mat-toolbar>
-    <div style="padding: 16px;">
-      <p><a mat-button href="#">Domov</a></p>
-      <p><a mat-button href="#">Recepty</a></p>
-      <p><a mat-button href="#">Obľubene</a></p>
-      <p><a mat-button href="#">Planovač</a></p>
-      <p><a mat-button href="#">Nakupny zoznam</a></p>
-    </div>
-  </mat-sidenav>
+<mat-toolbar color="primary">
+  <!-- Názov / Logo -->
+  <span>Recepty</span>
 
-  
-  <mat-sidenav-content>
-    
-    <mat-toolbar color="primary">
-      
-      <button mat-icon-button class="example-icon" (click)="drawer.toggle()" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
-      
-      <span>Recepty</span>
-      
-      <span class="example-spacer"></span>
-      
-      <button mat-icon-button class="example-icon favorite-icon" routerLink="/login" aria-label="Example icon-button with heart icon">
-        <mat-icon>login</mat-icon>
-      </button>
-      <button mat-icon-button class="example-icon" routerLink="/" aria-label="Domov">
-  <mat-icon>home</mat-icon>
-</button>
-    </mat-toolbar>
+  <!-- Navigačné odkazy vedľa seba -->
+  <div class="nav-links">
+    <a mat-button routerLink="/">Domov</a>
+    <a mat-button routerLink="/recepty">Recepty</a>
+    <a mat-button routerLink="/oblubene">Obľúbené</a>
+    <a mat-button routerLink="/vytvoriť">Vytvoriť</a>
+    <a mat-button routerLink="/zoznam">Nakupny zoznam</a>
+  </div>
 
+  <span class="example-spacer"></span>
 
+  <!-- Pravé ikony -->
+  <button mat-icon-button class="example-icon" routerLink="/login" aria-label="Prihlásenie">
+    <mat-icon>login</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" routerLink="/" aria-label="Domov">
+    <mat-icon>home</mat-icon>
+  </button>
+</mat-toolbar>
 
- <router-outlet></router-outlet>
+<!-- Hlavný obsah stránok, ktoré sa menia -->
+<div class="content-container">
+  <router-outlet></router-outlet>
+</div>
 
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<!-- Spoločná päta (Footer), ktorá bude na každej stránke -->
+<footer class="app-footer">
+  <h1>co zjest</h1>
+</footer>
